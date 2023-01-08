@@ -1,0 +1,12 @@
+{
+  "require": {
+    "ezyang/htmlpurifier": "^4.16",
+    "twig/twig": "^3.5",
+    "phpmailer/phpmailer": "^6.7"
+  },
+  "autoload": {
+    "PSR-4": {
+      "PhpAndMysqlBook\\": "src/classes/"
+    }
+  }
+}
