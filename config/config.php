@@ -1,5 +1,6 @@
 <?php
 define('DEV', true); // In development or live? Development = true | Live = false
+define('DOMAIN', 'http://localhost:8888'); // Domain (used to create links in emails)
 define('ROOT_FOLDER', 'public');
 
 // DOC_ROOT is created because the download code has several versions of the sample site
@@ -35,8 +36,3 @@ define('MEDIA_TYPES', ['image/jpeg', 'image/png', 'image/gif',]); // Allowed fil
 define('FILE_EXTENSIONS', ['jpeg', 'jpg', 'png', 'gif',]);       // Allowed file extensions
 define('MAX_SIZE', '5242880');                                    // Max file size
 define('UPLOADS', dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . ROOT_FOLDER . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR); // Image upload folder
-var_dump(DOC_ROOT);
-echo '<br>';
-var_dump(UPLOADS);
-echo '<br>';
-var_dump($dsn);
