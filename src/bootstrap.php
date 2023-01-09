@@ -27,3 +27,5 @@ $twig->addGlobal('session', $session);                   // Add session to Twig 
 if (DEV === true) {                                      // If in development
     $twig->addExtension(new Twig\Extension\DebugExtension()); // Add Twig debug extension
 }
+
+ob_start();
