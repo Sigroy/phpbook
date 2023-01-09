@@ -1,6 +1,6 @@
 <?php
-
-require './src/bootstrap.php';
+declare(strict_types=1);
+require 'src/bootstrap.php';
 
 $user_role = 'admin';
 

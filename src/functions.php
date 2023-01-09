@@ -56,6 +56,7 @@ function handle_exception($e)
     http_response_code(500);              // Set the http response code
     echo "<h1>Sorry, a problem occurred</h1>   
           The site's owners have been informed. Please try again later.";
+    exit;
 }
 
 // Handle fatal errors

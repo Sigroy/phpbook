@@ -11,7 +11,7 @@ if (DEV === false) {                                     // If not in developmen
     register_shutdown_function('handle_shutdown');       // Set shutdown handler
 }
 
-//$cms = new \PhpBook\CMS\CMS($dsn, $username, $password); // Create CMS object
+$cms = new PhpAndMysqlBook\CMS\CMS($dsn, $username, $password); // Create CMS object
 unset($dsn, $username, $password);                       // Remove database config data
 
 $twig_options['cache'] = APP_ROOT . '/var/cache';        // Path to Twig cache folder
@@ -21,8 +21,8 @@ $loader = new Twig\Loader\FilesystemLoader(APP_ROOT . '/templates'); // Twig loa
 $twig   = new Twig\Environment($loader, $twig_options);  // Twig environment
 $twig->addGlobal('doc_root', DOC_ROOT);                  // Document root
 
-//$session = $cms->getSession();                           // Create session
-//$twig->addGlobal('session', $session);                   // Add session to Twig global
+$session = $cms->getSession();                           // Create session
+$twig->addGlobal('session', $session);                   // Add session to Twig global
 
 if (DEV === true) {                                      // If in development
     $twig->addExtension(new Twig\Extension\DebugExtension()); // Add Twig debug extension
