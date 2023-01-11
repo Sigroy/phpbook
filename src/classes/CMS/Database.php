@@ -10,6 +10,20 @@ class Database extends \PDO
         $default_options[\PDO::ATTR_EMULATE_PREPARES] = false;
         $default_options[\PDO::ATTR_ERRMODE] = \PDO::ERRMODE_EXCEPTION;
         $options = array_replace($default_options, $options);
-        parent::__construct($dsn, $username, $password, $options);
+        try {
+            parent::__construct($dsn, $username, $password, $options);
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
+    public function runSql(string $sql, array $arguments = null)
+    {
+        if (!$arguments) {
+            return $this->query($sql);
+        }
+        $statement = $this->prepare($sql);
+        $statement->execute($arguments);
+        return $statement;
     }
 }
