@@ -5,10 +5,6 @@ use PhpAndMysqlBook\Validate\Validate;
 
 require '../bootstrap.php';
 
-if (is_admin($)) {
-
-}
-
 $email = '';
 $errors = [];
 $success = $_GET['success'] ?? null;
