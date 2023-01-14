@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$data['navigation'] = $cms->getCategory()->getAll();
+//$data['navigation'] = $cms->getCategory()->getAll();
 $data['error'] = $error ?? null;
 $data['sent'] = $sent;
 

@@ -64,4 +64,12 @@ class CMS
         }
         return $this->comment;                           // Return Comment object
     }
+
+    public function getSession()
+    {
+        if ($this->session === null) {
+            $this->session = new Session($this->db);
+        }
+        return $this->session;
+    }
 }

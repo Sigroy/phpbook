@@ -44,6 +44,6 @@ class Member
     {
         $sql = "SELECT id FROM member
                 WHERE email = :email";
-        return $this->db->runSql($sql, ['email' => $email])->fetColumn();
+        return $this->db->runSql($sql, ['email' => $email])->fetchColumn();
     }
 }
