@@ -39,4 +39,11 @@ class Member
         $authenticated = password_verify($password, $member['password']);
         return ($authenticated ? $member : false);
     }
+
+    public function getIdByEmail(string $email)
+    {
+        $sql = "SELECT id FROM member
+                WHERE email = :email";
+        return $this->db->runSql($sql, ['email' => $email])->fetColumn();
+    }
 }
